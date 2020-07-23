@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const menuShema = {
+const menuSchema = new Schema({
     title : {
         type:String,
         require:true
@@ -22,7 +22,7 @@ const menuShema = {
         type:String,
         require:true
     }
-}
+})
 
-let menu = mongoose.model('menu',menuShema);
-module.export = menu;
+let menu = menuSchema
+module.exports = mongoose.model('menu',menu);

@@ -1,11 +1,10 @@
 {
   "name": "back",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "dev" : "nodemon server.js"
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +16,14 @@
   "devDependencies": {
     "i": "^0.3.6",
     "nodemon": "^2.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nasimelahi/backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nasimelahi/backend/issues"
+  },
+  "homepage": "https://github.com/nasimelahi/backend#readme",
+  "description": ""
 }
