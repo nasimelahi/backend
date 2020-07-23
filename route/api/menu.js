@@ -22,11 +22,11 @@ router.post('/', (req,res) => {
     const { title, catagorey, price , ingridient, detail } = req.body
 
     const newItem = new db({
-        title : req.body.title,
-        catagorey : req.body.catagorey,
-        price : req.body.price,
-        ingridient: req.body.ingridient,
-        detail : req.body.detail
+        title : title,
+        catagorey : catagorey,
+        price : price,
+        ingridient: ingridient,
+        detail : detail
     })
     if(title =="" || catagorey =="" || price ==""  || ingridient ==""  || detail == ''){
        return res.status(400).json({ "msg" : "please fill all from with correct detail"})
