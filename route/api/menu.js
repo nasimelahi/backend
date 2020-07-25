@@ -12,8 +12,16 @@ router.get('/', (req,res)=>{
 
 //get induvadual item 
 
-router.get(':id',( req,res) =>{
-    console.log(req.params.id)
+router.get('/:id',( req,res) =>{
+    let check_item = db.find({_id:req.params.id})
+    .then(item => {
+        if (item){
+            return res.status(200).json({ "msg" : ` its in list`})
+        }else{
+         return res.status(400).json({ "msg" : `its in Not in list`})
+        }
+    })
+    .catch(err => console.log(err))
 })
 
 // post item
@@ -34,6 +42,15 @@ router.post('/', (req,res) => {
     }
     newItem.save()
     .then(item => {res.json(item)})
+})
+
+//Update Item
+router.put('/:id', (req,res) => {
+    const { title, catagorey, price , ingridient, detail } = req.body
+    let update_item = db.find({_id: req.params.id})
+   .then(item => {
+       console.log(item[title])
+   })
 })
 
 module.exports = router
